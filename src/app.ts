@@ -5,6 +5,7 @@ import  logger from 'morgan';
 
 import { conectarServidorNoBD } from './config/db';
 import { routerUsuario } from './routes/usuario';
+import { routerLancamento} from "./routes/lancamento"
 // import { routerLancamento } from './routes/lancamento';
 
 /**
@@ -38,6 +39,6 @@ conectarServidorNoBD();
  */
 
 app.use('/usuario', routerUsuario);
-// app.use('/lancamento', routerLancamento);
+app.use('/lancamento', routerLancamento);
 app.use('/', (req, res) => res.send('API do app Julius'));
 
