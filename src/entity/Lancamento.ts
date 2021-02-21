@@ -1,5 +1,5 @@
 import { Usuario } from "./Usuario";
-import { Column, Entity, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 
@@ -12,7 +12,7 @@ export class Lancamento {
     this.usuario = usuario;
   }
 
-  @PrimaryColumn() // gerado automaticamente
+  @PrimaryGeneratedColumn() // gerado automaticamente
   id: number;
 
   @Column({ type: "float" })

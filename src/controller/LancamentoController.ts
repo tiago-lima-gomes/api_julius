@@ -6,7 +6,7 @@ export class LancamentoController {
     async salvar(lancamento: Lancamento) {
     //  try{ 
         const lancamentoSalvo = await getManager().save(lancamento);
-        console.log(lancamentoSalvo, "kkkkkkk")
+        // console.log(lancamentoSalvo, "kkkkkkk")
         return lancamentoSalvo;
     //  } catch{
     //   console.log("deu merda")

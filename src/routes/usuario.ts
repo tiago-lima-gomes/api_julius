@@ -25,3 +25,18 @@ routerUsuario.get('/', async (req, res) => {
   res.json(usuarios);
 });
 
+
+// Serviço para recuperar os lançamentos de um determinado usuário
+
+routerUsuario.get('/lancamentos/:idUsuario', async (req, res) => {
+  const idUsuario = parseInt(req.params.idUsuario);
+  try{ 
+  // await usuarioCtrl.verificaId(idUsuario);
+  const lancamentos = await usuarioCtrl.recuperarLancamentosDoUsuario(idUsuario);
+  res.json(lancamentos);
+  } catch{
+    console.log("id invalido");
+    res.status(404).json({ mensagem: 'id invalido' });
+  }
+});
+

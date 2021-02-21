@@ -13,7 +13,7 @@ const usuarioCtrl = new UsuarioController();
 routerLancamento.post('/', async (req, res) => {
     const { idUsuario, valor, descricao, data } = req.body;
     const usuario = await usuarioCtrl.recuperarPorId(idUsuario);
-    console.log(idUsuario, "antes de entrar")
+    // console.log(idUsuario, "antes de entrar")
     if (usuario) {
         console.log(usuario,"entrou")
         const lancamento = new Lancamento(valor, descricao, data, usuario);

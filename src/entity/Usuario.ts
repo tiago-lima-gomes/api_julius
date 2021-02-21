@@ -17,7 +17,7 @@ export class Usuario {
 
     @Column()
     email: string;
-
+                                              // na entidade Lancamento temos o lancamento.usuario
     @OneToMany(() => Lancamento, lancamento => lancamento.usuario)
     lancamentos: Lancamento[];
 }

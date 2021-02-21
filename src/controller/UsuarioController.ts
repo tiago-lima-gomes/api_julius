@@ -17,4 +17,17 @@ export class UsuarioController {
         const usuario = await getManager().findOne(Usuario, id);
         return usuario;
     }
+
+    // async verificaId(id: number) {
+    //     await getManager().findOne(Usuario, id);
+    //     // console.log(user.id , "WWWWWWWWWWWW")
+    //     // return user.id;
+    // }
+
+    async recuperarLancamentosDoUsuario(id: number) {
+        const usuario = await getManager().findOne(Usuario, id, {
+            relations: ['lancamentos']
+        });
+        return usuario.lancamentos;
+    }
 }
